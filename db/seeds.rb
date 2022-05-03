@@ -9,3 +9,9 @@
 
 
 
+
+  User.first.books.create!(
+    title: 'ddadfasgsd',
+    body: 'sfafdadsf',
+    created_at: '2022-04-30'
+  )

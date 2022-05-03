@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>6日前</th>
+      <th>５日前</th>
+      <th>４日前</th>
+      <th>３日前</th>
+      <th>２日前</th>
+      <th>昨日</th>
+      <th>今日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%=@book.created_days_ago(6).count %></td>
+      <td><%=@book.created_days_ago(5).count %></td>
+      <td><%=@book.created_days_ago(4).count %></td>
+      <td><%=@book.created_days_ago(3).count %></td>
+      <td><%=@book.created_days_ago(2).count %></td>
+      <td><%=@book.created_days_ago(1).count %></td>
+      <td><%=@book.created_days_ago(0).count %></td>
+     
+    </tr>
+  </tbody>
+</table>

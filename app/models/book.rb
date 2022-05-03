@@ -35,17 +35,17 @@ class Book < ApplicationRecord
 
 
   #７日間の投稿データ取得
-  # scope :created_2days, -> { where(created_at: 2.days.ago.all_day) } 
-  # scope :created_3days, -> { where(created_at: 3.days.ago.all_day) } 
-  # scope :created_4days, -> { where(created_at: 4.days.ago.all_day) } 
-  # scope :created_5days, -> { where(created_at: 5.days.ago.all_day) } 
-  # scope :created_6days, -> { where(created_at: 6.days.ago.all_day) } 
+  scope :created_2days, -> { where(created_at: 2.days.ago.all_day) } 
+  scope :created_3days, -> { where(created_at: 3.days.ago.all_day) } 
+  scope :created_4days, -> { where(created_at: 4.days.ago.all_day) } 
+  scope :created_5days, -> { where(created_at: 5.days.ago.all_day) } 
+  scope :created_6days, -> { where(created_at: 6.days.ago.all_day) } 
   
   #リファクタリング
-  scope :created_days_ago, ->(n) { where(created_at: n.days.ago.all_day) }
+  # scope :created_days_ago, ->(n) { where(created_at: n.days.ago.all_day) }
 
  #0~6になってしまうので、反転させるためにreverse
-  def self.past_week_count
-    (1..6).map { |n| created_days_ago(n).count }.reverse
-  end
+  # def self.past_week_count
+  #   (1..6).map { |n| created_days_ago(n).count }.reverse
+  # end
 end

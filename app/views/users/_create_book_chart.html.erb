@@ -29,8 +29,8 @@
 
   <script>
       // $(document).on('turbolinks:load', function() {
-      var ctx = document.getElementById("myLineChart");
-      var myLineChart = new Chart(ctx, {
+      const ctx = document.getElementById('myChart').getContext('2d');
+      const myChart = new Chart(ctx, {
         type: 'line',
         data: {
           labels: ['6日前', '5日前', '4日前', '3日前', '2日前', '1日前', '今日'],

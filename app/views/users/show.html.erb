@@ -25,8 +25,26 @@
           <% end %>
         </tbody>
       </table>
+      <!--検索結果-->
       <%= render 'create_book'%>
+      <!--グラフ-->
       <%= render 'create_book_chart' %>
+      <!--投稿数-->
+      <!--検索-->
+        <%= form_with url: user_search_path(@user), method: :get, local: false do |f| %>
+        <!--年/月/日が表示-->
+          <%= f.date_field :created_at %>
+          <%= f.submit '検索', class: 'btn btn-secondary' %>
+        <% end %>
+          
+          
+          <!--検索結果を部分テンプレート化してjsファイル呼び出す-->
+        <div id="search_result">
+          <% if @search_book.present? %>
+            <!--検索結果-->
+            <%= render 'search', search_book: @search_book %>
+          <% end %>
+        </div>
     </div>
   </div>
 </div>
